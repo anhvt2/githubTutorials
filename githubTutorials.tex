@@ -49,6 +49,13 @@
 \usepackage{minted}
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{xcolor}
+
+
+% \lstset{
+%   basicstyle=\ttfamily,
+%   escapeinside=||
+% }
 
 \lstset{basicstyle=\ttfamily,
   showstringspaces=false,
@@ -63,7 +70,7 @@
 {GitHub Tutorials}
 
 \subtitle
-{for 2020 ASME-CIE Hackathon: Identifying, Extracting, Analyzing Value from Large Unstructured Data Sets in Mechanical Engineering}
+{for 2021 ASME-CIE Hackathon: Identifying, Extracting, Analyzing Value from Large Unstructured Data Sets in Mechanical Engineering}
 
 \author[Anh Tran]{Anh Tran}
 \institute
@@ -128,6 +135,8 @@ Git is the free and open source distributed version control system that's respon
 \item write a README.md
 \end{itemize}
 \item invite others to join your GitHub repo
+\item best use with Atom or Sublime text editor
+\item Sublime Merge or Github Desktop is also very decent choices
 \end{itemize}
 
 \end{frame}
@@ -143,19 +152,19 @@ Git is the free and open source distributed version control system that's respon
 \item config to $\sim$/.config
 
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 git config --global user.name "FirstName LastName"
 git config --global user.email "a@b.com"
 git config --global color.ui auto
-git config --global core.editor "nano" # or your fav editor
-\end{verbatim}
+git config --global core.editor "nano" # or your favorite editor
+\end{lstlisting}
 \normalsize
 
 \item (optional) create a long-term key to your own device (i.e. if somebody uses your laptop then they can get to your GitHub repo WITHOUT logins)
 
 \tiny
-\begin{verbatim}
-ssh-keygen -t rsa -b 4096 -C "a@b.com"
+\begin{lstlisting}
+ssh-keygen -t rsa -b 4096 -C "a******@gmail.com"
 # when prompt, type id_rsaGitHub
 # will generate id_rsaGitHub and id_rsaGitHub.pub
 eval `ssh-agent -s` # start an ssh agent
@@ -164,8 +173,8 @@ ssh-add ~/.ssh/id_rsaGitHub # add ssh-key to ~/.ssh/config
 ssh -vT git@github.com
 
 # expect a message like this
-Hi XXX! You've successfully authenticated, but GitHub does not provide shell access.
-\end{verbatim}
+Hi ***! You've successfully authenticated, but GitHub does not provide shell access.
+\end{lstlisting}
 \normalsize
 
 \end{itemize}
@@ -181,67 +190,83 @@ Hi XXX! You've successfully authenticated, but GitHub does not provide shell acc
 
 \item clone
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 git clone https://github.com/pytorch/pytorch.git # https
 # git clone git@github.com:pytorch/pytorch.git # ssh - SSH required 
 # you can also switch mode in ./git/config in the local GitHub repo
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 
 
 \item typical workflow (this is what you will use the most)
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 git add # be specific, e.g. git add testABC.py
 # git add * # this is ok, but beware of your colleagues' concurrent work
 # NEVER USE: git add * -f
 
 git commit # or git commit -m "write some notes", git commit --amend
-git pull --rebase # git fetch # optional: only if there are conflicts
+# git pull --rebase # git fetch # optional: only if there are conflicts
 
 git push # or git push origin master
 # or git stash: https://git-scm.com/docs/git-stash
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \item read logs from your teammates
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 git log
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
-\item remove, copy, move
+\item remove; move (or rename)
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 git rm file.txt
 git mv file.txt test/
-\end{verbatim}
+\end{lstlisting}
 \normalsize
-
-\item see what have been changed
-\tiny
-\begin{verbatim}
-git diff 
-# or 
-git diff SHA1 SHA2
-\end{verbatim}
-\normalsize
-
-
-\item check status
-\tiny
-\begin{verbatim}
-git status
-\end{verbatim}
-\normalsize
-
 
 \end{itemize}
 \end{frame}
 
 
+
+
+
+\begin{frame}[fragile]
+\frametitle{Git in action}
+
+\begin{itemize}
+
+\item see what have been changed between commits
+\tiny
+\begin{lstlisting}
+git diff SHA1 SHA2
+git diff <commit hash> <filename>
+\end{lstlisting}
+\normalsize
+
+
+\item check status/branch
+\tiny
+\begin{lstlisting}
+git status
+\end{lstlisting}
+\normalsize
+
+\item reverse a file to an earlier commit
+\tiny
+\begin{lstlisting}
+git reset <commit hash> <filename>
+\end{lstlisting}
+\normalsize
+
+
+\end{itemize}
+\end{frame}
 
 
 
@@ -253,14 +278,14 @@ git status
 
 \item reset to previous version (advanced)
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 git reset --hard <SHA> # e.g. commit a5fdab97d911414660683c89b6cecd965b55ce16
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \item create a branch
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 git branch my_debug_branch
 git checkout my_debug_branch
 
@@ -269,7 +294,7 @@ git merge my_debug_branch
 
 # git branch -v
 # git branch -list
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \item other helpful sources: \href{https://github.com/allenwhm/git-in-action#what-is-git}{\underline{here}}
@@ -299,38 +324,38 @@ git merge my_debug_branch
 
 \item text
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 It's very easy to make some words **bold** 
 and other words *italic* with Markdown. 
 You can even [link to Google!](http://google.com)
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \item headers
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 # This is an <h1> tag
 ## This is an <h2> tag
 ###### This is an <h6> tag
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \item emphasis
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 *This text will be italic*
 _This will also be italic_
 **This text will be bold**
 __This will also be bold__
 _You **can** combine them_
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \item strikethrough
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 ~~this~~
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \end{itemize}
@@ -350,48 +375,48 @@ _You **can** combine them_
 
 \item list: unordered
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 * Item 1
 * Item 2
   * Item 2a
   * Item 2b
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \item list: ordered
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 1. Item 1
 1. Item 2
 1. Item 3
    1. Item 3a
    1. Item 3b
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 
 \item images
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 ![GitHub Logo](/images/logo.png)
 Format: ![Alt Text](url)
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \item hyperlink
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 http://github.com - automatic!
 [GitHub](http://github.com)
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \item inline code
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 I think you should use an
 `<addr>` element here instead.
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 \end{itemize}
@@ -414,7 +439,7 @@ I think you should use an
 
 \item GitHub flavored markdown
 \tiny
-\begin{verbatim}
+\begin{lstlisting}
 ```python
 def foo():
     if not bar:
@@ -427,7 +452,7 @@ function y = foo(x)
   y = x
 end
 ```
-\end{verbatim}
+\end{lstlisting}
 \normalsize
 
 

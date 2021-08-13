@@ -24,24 +24,26 @@
 \headcommand {\beamer@framepages {6}{6}}
 \headcommand {\slideentry {4}{0}{2}{7/7}{}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@sectionpages {6}{7}}
-\headcommand {\beamer@subsectionpages {6}{7}}
-\headcommand {\sectionentry {5}{README.md}{8}{README.md}{0}}
-\headcommand {\slideentry {5}{0}{1}{8/8}{}{0}}
+\headcommand {\slideentry {4}{0}{3}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {5}{0}{2}{9/9}{}{0}}
+\headcommand {\beamer@sectionpages {6}{8}}
+\headcommand {\beamer@subsectionpages {6}{8}}
+\headcommand {\sectionentry {5}{README.md}{9}{README.md}{0}}
+\headcommand {\slideentry {5}{0}{1}{9/9}{}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {5}{0}{3}{10/10}{}{0}}
+\headcommand {\slideentry {5}{0}{2}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@sectionpages {8}{10}}
-\headcommand {\beamer@subsectionpages {8}{10}}
-\headcommand {\sectionentry {6}{GitHub Desktop}{11}{GitHub Desktop}{0}}
-\headcommand {\slideentry {6}{0}{1}{11/11}{}{0}}
+\headcommand {\slideentry {5}{0}{3}{11/11}{}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {6}{0}{2}{12/12}{}{0}}
+\headcommand {\beamer@sectionpages {9}{11}}
+\headcommand {\beamer@subsectionpages {9}{11}}
+\headcommand {\sectionentry {6}{GitHub Desktop}{12}{GitHub Desktop}{0}}
+\headcommand {\slideentry {6}{0}{1}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\beamer@partpages {1}{12}}
-\headcommand {\beamer@subsectionpages {11}{12}}
-\headcommand {\beamer@sectionpages {11}{12}}
-\headcommand {\beamer@documentpages {12}}
-\headcommand {\gdef \inserttotalframenumber {12}}
+\headcommand {\slideentry {6}{0}{2}{13/13}{}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@partpages {1}{13}}
+\headcommand {\beamer@subsectionpages {12}{13}}
+\headcommand {\beamer@sectionpages {12}{13}}
+\headcommand {\beamer@documentpages {13}}
+\headcommand {\gdef \inserttotalframenumber {13}}
